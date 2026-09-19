@@ -1,0 +1,123 @@
+:root {
+  /* Neon-gradient / cyberpunk dark theme tokens (plan.md § Visual Design System).
+     Chosen to keep WCAG AA contrast (>=4.5:1) for body text on dark surfaces;
+     color always pairs with a text label, never carries meaning alone. */
+  --bg-base-start: #0a0118;
+  --bg-base-end: #0d021f;
+  --surface: #150a2e;
+  --surface-raised: #1c0f3d;
+
+  --accent-primary-start: #b026ff;
+  --accent-primary-end: #ff2ee6;
+  --accent-secondary: #00f0ff;
+  --accent-new: #39ff14;
+  --accent-unknown: #ffb020;
+  --accent-error: #ff2965;
+
+  --text-primary: #eaf2ff;
+  --text-muted: #9aa0c3;
+
+  --border-subtle: rgba(176, 38, 255, 0.35);
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --font-sans:
+    "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-primary-start), var(--accent-primary-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-border {
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 0 12px rgba(176, 38, 255, 0.25);
+}
+
+.neon-border-unknown {
+  border: 1px solid var(--accent-unknown);
+  box-shadow: 0 0 12px rgba(255, 176, 32, 0.3);
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover:not(:disabled) {
+  box-shadow: 0 0 16px rgba(176, 38, 255, 0.45);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent-primary-start), var(--accent-primary-end));
+  border: none;
+  color: #0a0118;
+}
+
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.badge-new {
+  color: #06210a;
+  background: var(--accent-new);
+  border-color: var(--accent-new);
+}
+
+.badge-unknown {
+  color: #2b1600;
+  background: var(--accent-unknown);
+  border-color: var(--accent-unknown);
+}
+
+.banner-error {
+  background: rgba(255, 41, 101, 0.12);
+  border: 1px solid var(--accent-error);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
