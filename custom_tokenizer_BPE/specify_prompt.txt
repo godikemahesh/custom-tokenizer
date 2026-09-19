@@ -1,0 +1,14 @@
+/speckit.specify
+Update the existing specification to enhance the Custom Tokenizer with Byte Pair Encoding (BPE).
+Keep all existing functionality unchanged, especially Tiktoken and the current Custom Tokenizer.
+The Custom Tokenizer should support BPE training using user-provided training text. The user should be able to enter training text, set a target vocabulary size, and start BPE training.
+After training, the UI should show the learned vocabulary, merge rules, and training details such as the pair selected and merged at each step.
+The user should then be able to enter new text and tokenize it using the trained BPE tokenizer. Display the resulting tokens and token IDs in the existing tokenization result table.
+The UI should clearly separate the BPE training flow from the BPE tokenization flow and provide appropriate loading, empty, validation, success, and error states.
+The BPE algorithm should learn frequent adjacent pairs, merge them repeatedly, create a vocabulary and ordered merge rules, and use those learned rules when tokenizing new text. It must not learn new merge rules during tokenization.
+BPE vocabulary IDs must be deterministic.
+Keep all BPE logic in the FastAPI backend. The React frontend should handle user input, API calls, UI state, results, and visualization only.
+Add the necessary requirements and acceptance criteria for BPE training, tokenization, vocabulary, merge rules, UI flow, validation, and testing.
+Remove or update any existing requirement that conflicts with adding BPE training.
+Do not change unrelated requirements and do not write implementation code.
+we need to update the custom tokenizer with this bpe based.

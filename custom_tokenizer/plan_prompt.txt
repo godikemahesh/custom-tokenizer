@@ -1,0 +1,39 @@
+/speckit.plan
+Create the implementation plan for the approved Tokenizer Application specification.
+Use the existing constitution as the governing engineering constraints and use spec.md as the source of truth for functional requirements.
+The plan must translate the approved requirements into a concrete, dependency-aware technical implementation plan.
+Define:
+- System architecture and component boundaries
+- Frontend and backend repository structure
+- API contracts and Pydantic schemas
+- Tiktoken service design
+- Custom Tokenizer service and deterministic tokenization algorithm
+- Custom vocabulary state and lifecycle
+- TXT and PDF processing
+- File validation and error handling
+- Token statistics calculation
+- React state and component structure,with neon-gradient aesthetic colours
+- Frontend/backend communication
+- Token and vocabulary visualization
+- Testing strategy
+- Security and configuration
+- Implementation sequence and dependencies
+Respect these constraints:
+- React + TypeScript frontend
+- FastAPI + Python backend
+- REST API communication
+- tiktoken for Tiktoken mode
+- PyMuPDF for PDF extraction
+- Pydantic for API contracts
+- pytest for backend testing
+- No database or persistent storage
+- No unnecessary frameworks or infrastructure
+-use neon-gradient aesthetic or dark-mode cyberpunk colours in the ui to make it more impressive and Professional
+- Keep Tiktoken and Custom Tokenizer implementations independent
+- Do not modify the Tiktoken vocabulary
+-use regex for custom tokenizer
+- Keep API routes thin and business logic in backend services
+- Do not move tokenization logic into React
+Do not write implementation code.
+Produce an actionable technical plan that can be directly converted into implementation tasks.
+

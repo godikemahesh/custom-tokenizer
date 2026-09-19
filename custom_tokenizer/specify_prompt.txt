@@ -1,0 +1,64 @@
+/speckit.specify
+
+Define the functional requirements for the Tokenizer Application.
+
+The application must:
+
+- Allow users to enter text directly.
+- Allow users to upload TXT files.
+- Allow users to upload PDF files and extract text from normal text-based PDFs.
+- Allow users to select between Tiktoken and Custom Tokenizer modes.
+- Allow users to select a supported Tiktoken encoding.
+- Tokenize input using the selected tokenizer.
+- Display token index, token ID, token text, and relevant token details.
+- Display character count, word count, token count, tokens per word, and tokens per character.
+- For Tiktoken, use the actual selected encoding and return real token IDs and token information.
+- For Custom Tokenizer, use a deterministic token-splitting strategy.
+- Maintain an application-owned Custom Tokenizer vocabulary.
+- Reuse existing custom vocabulary token IDs.
+- Create new vocabulary entries for previously unseen tokens.
+- Assign deterministic IDs to newly created custom tokens.
+- Track token frequency.
+- Identify tokens newly created during the current tokenization operation.
+- Display the current Custom Tokenizer vocabulary with ID, token, frequency, and status.
+- Visually distinguish newly created tokens from existing tokens.
+- Update the vocabulary display immediately after successful custom tokenization.
+- Allow users to reset the Custom Tokenizer vocabulary to its initial state.
+- Validate empty input, unsupported files, oversized files, invalid/corrupted PDFs, PDFs with no extractable text, and unsupported encodings.
+- Display clear and user-friendly validation and processing errors.
+- Provide loading, empty, error, and success states.
+- Provide a responsive and accessible user interface.
+- Ensure Tiktoken vocabulary is never modified by the application.
+- Keep Tiktoken and Custom Tokenizer behavior independent.
+- Do not persist vocabulary or user data in a database.
+
+The specification must define clear, testable acceptance criteria for each requirement.
+
+Do not introduce authentication, user accounts, OCR, databases, cloud storage, LLM inference, billing, tokenizer training, or other functionality outside these requirements.
+
+1. User Experience
+The react interface should contain:
+- Application title
+- Description
+- Input mode selection
+- Text input/upload controls
+- Encoding selector
+- Tokenize button
+- Statistics section
+- Token visualization section
+- Extracted text section for uploaded documents
+- Error messages
+2. API Response
+The response should contain enough information for the frontend to render:
+- original text
+- token count
+- token IDs
+- decoded tokens
+- character count
+- word count
+- tokens per word
+- tokens per character
+- selected encoding
+- source type
+The goal is a small, clean tokenizer application focused on understanding how text is converted into tokens.
+

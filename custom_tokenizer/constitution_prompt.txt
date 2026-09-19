@@ -1,0 +1,17 @@
+/speckit.constitution
+Create the project constitution for the Tokenizer Application.
+Keep it concise and practical. Define these mandatory rules:
+- Use a simple, modular React + FastAPI architecture with clear separation of responsibilities.
+- React owns UI, user interactions, API calls, loading states, errors, and visualization only.
+- FastAPI owns validation, file processing, text extraction, tokenization, statistics, vocabulary management, and API responses.
+- All authoritative tokenization MUST happen in the backend; React MUST NOT duplicate tokenizer logic.
+- Support TXT and PDF input with backend validation and text extraction.
+- Maintain two independent tokenizer services: Tiktoken and Custom Tokenizer.
+- Tiktoken behavior and vocabulary MUST remain unchanged and externally authoritative.
+- Custom Tokenizer MUST maintain its own in-memory vocabulary with deterministic token IDs and dynamic token creation.
+- Tokenizer implementations MUST be independently replaceable or extendable without major frontend changes.
+- API routes MUST remain thin and delegate business logic to services.
+- No database is required; custom vocabulary remains in memory.
+- All requirements and behavior MUST be clear, testable, and traceable to implementation and tests.
+- Backend tests MUST use pytest; frontend behavior MUST have appropriate automated tests.
+- Avoid unnecessary abstractions, dependencies, infrastructure, and duplicated logic.
